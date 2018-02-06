@@ -1,0 +1,6 @@
+api/api-key.txt
+result/*
+*.log
+*.sh
+*.un~
+*.bk
