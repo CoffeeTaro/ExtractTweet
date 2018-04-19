@@ -77,7 +77,7 @@ func main() {
 	/*
 		シリアライズされた地名辞書をデコードする
 	*/
-	// ファイル読み込み
+	// 辞書を読み込む
 	dictPath = "./geo_dict.json"
 	file, err := os.Open(dictPath)
 	if err != nil {
@@ -133,7 +133,7 @@ func main() {
 	}()
 
 	freezeAPI = false
-	// APIKeyの読み込み
+	// API Keyの読み込み
 	fp, err := os.Open("./api/api-key.txt")
 	if err != nil {
 		log.Panic("ファイルを開けませんでした: api key path ./api/api-key.txt")
@@ -170,7 +170,6 @@ func main() {
 	// ファイルパスを送受信するためのchannel
 	var filep chan string = make(chan string, 6)
 
-	// デッドロック防止策
 	go func() {
 		// TweetデータをパースするためのGoroutine
 	FOR:
@@ -238,8 +237,6 @@ func writeGzFile(gt GeoTweet, outputDir string) {
 	// NowFlagをstringに
 	nf := convertBooltoBinary(gt.NowFlag)
 	ir := convertBooltoBinary(gt.IsReal)
-	// 文字列に変換
-	// lat := strconv.FormatFloat(gt.Coordinate[0]*1.2198, 'f', -1, 64)
 	lat := strconv.FormatFloat(gt.Coordinate[0], 'f', -1, 64)
 	lng := strconv.FormatFloat(gt.Coordinate[1], 'f', -1, 64)
 	ca := strconv.FormatInt(gt.Created_at, 10)

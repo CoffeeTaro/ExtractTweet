@@ -2,7 +2,8 @@
 Twitterアカウント400万件規模の物を処理するためのプログラム
 
 ## Requirement
-Google maps Geocoding APIのキーを./api/api-key.txtに書き込んでおく必要がある
+- MeCab 0.996, mecab-config
+- Google maps Geocoding APIのキーを./api/api-key.txtに書き込んでおく必要がある
 
 ## Usage
 
