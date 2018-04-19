@@ -1,13 +1,14 @@
 # Tweet Extractor
-Twitterアカウント400万件規模の物を処理するためのプログラム
+Twitterアカウント400万件規模の物を処理したプログラム
 
 ## Requirement
-Google maps Geocoding APIのキーを./api/api-key.txtに書き込んでおく必要がある
+- MeCab 0.996, mecab-config
+- Google maps Geocoding APIのキーを./api/api-key.txtに書き込んでおく必要がある
 
 ## Usage
 
--inフラグの後にjsonファイルが入っているzipがあるディレクトリを指定する  
--outフラグの後に出力先となるディレクトリ名を指定する  
+inフラグの後にjsonファイルが入っているzipがあるディレクトリを指定する  
+outフラグの後に出力先となるディレクトリ名を指定する  
 
 ```
 ./extractor -in="path/to/input/" -out="path/to/output/"
